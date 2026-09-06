@@ -117,6 +117,7 @@ confirmButton.addEventListener("click", () => {
         correctOrIncorrect.classList.remove("show");
         result = generateExpression();
         correctOrIncorrect.innerHTML = ""
+        userInput.value = ""
     }, 2000);
 });
 

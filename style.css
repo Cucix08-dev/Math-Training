@@ -24,7 +24,7 @@ body {
 
 #correct-or-incorrect {
     position: absolute;
-    font-size: 1.7vw;
+    font-size: clamp(1.5rem,1.7vw,2rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,10 +103,10 @@ button#refresh-button {
 }
 
 #user-input-result {
-    width: clamp(70px,70%,140px);        
+    width: clamp(100px,70%,140px);        
     height: clamp(70px,50%,90px);       
     padding: 8px;     
-    margin-left: 20px;  
+    margin-left: 60px;  
     box-sizing: border-box; 
     font-size: clamp(3rem,4vw,4rem);
     justify-content: center;
