@@ -61,7 +61,7 @@ body {
     justify-content: center;
     width: 18%;
     max-width: 738px;
-    font-size: clamp(3rem,4vw,4rem);
+    font-size: clamp(2.5rem,4vw,4rem);
     transition: transform ease 0.4s;
 }
 
@@ -108,7 +108,7 @@ button#refresh-button {
     padding: 8px;     
     margin-left: 60px;  
     box-sizing: border-box; 
-    font-size: clamp(3rem,4vw,4rem);
+    font-size: clamp(2.5rem,4vw,4rem);
     justify-content: center;
     border: solid 2px rgba(67, 197, 241, 0.134);
     border-radius: 10px;
