@@ -69,8 +69,8 @@ let result = generateExpression();
 
 const correctOrIncorrect = document.getElementById("correct-or-incorrect");
 
-const backgroundcolorIncorrect = "#ff010121";
-const colorIncorrect = "#ffa0a0";
+const backgroundcolorIncorrect = "#391e1eba";
+const colorIncorrect = "#ff9595";
 
 const backgroundcolorCorrect = "#45ff6a50";
 const colorCorrect = "#1cff27";
@@ -116,6 +116,7 @@ confirmButton.addEventListener("click", () => {
     setTimeout(() => {
         correctOrIncorrect.classList.remove("show");
         result = generateExpression();
+        correctOrIncorrect.innerHTML = ""
     }, 2000);
 });
 
