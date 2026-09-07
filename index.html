@@ -18,6 +18,7 @@
                 <line x1="6" y1="16" x2="26" y2="16" />
                 <line x1="6" y1="22" x2="26" y2="22" />
             </svg>
+
             <svg id="left-arrow" class="hidden icon" width="32" height="32" viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg" fill="none"
                 stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -25,21 +26,46 @@
                 <polyline points="20 8 12 16 20 24" />
             </svg>
         </div>
-        <h1 id="mode">Normal Training</h1>
+
+        <h1 id="mode" class="translation"
+            data-it="Allenamento Normale">Normal Training</h1>
+
+        <div id="translation-button">
+            <svg width="32" height="20" viewBox="0 0 3 2">
+                <rect width="1" height="2" x="0" fill="#009246"/>
+                <rect width="1" height="2" x="1" fill="#F1F2F1"/>
+                <rect width="1" height="2" x="2" fill="#CE2B37"/>
+            </svg>
+        </div>
     </header>
+
     <aside id="menu-aside">
-        <h2 id="menu-title" class="title">Training Modes</h2>
+        <h2 id="menu-title" class="title translation"
+            data-it="Modalità di Allenamento">Training Modes</h2>
 
         <ul id="modeUl">
-            <li id="normal-training" class="page selected">Normal Training</li>
-            <li id="grade-1" class="page">+</li>
-            <li id="grade-2" class="page">+ -</li>
-            <li id="grade-3" class="page">+ - *</li>
-            <li id="grade-4" class="page">+ - * /</li>
-            <li id="middle-school" class="page">+ - * / ^</li>
+            <li id="normal-training" class="page selected translation"
+                data-it="Allenamento Normale">Normal Training</li>
+
+            <li id="grade-1" class="page translation"
+                data-it="Addizione">Addition</li>
+
+            <li id="grade-2" class="page translation"
+                data-it="Addizione e Sottrazione">Addition & Subtraction</li>
+
+            <li id="grade-3" class="page translation"
+                data-it="Addizione, Sottrazione e Moltiplicazione">Addition, Subtraction & Multiplication</li>
+
+            <li id="grade-4" class="page translation"
+                data-it="Addizione, Sottrazione, Moltiplicazione e Divisione">Addition, Subtraction, Multiplication & Division</li>
+
+            <li id="middle-school" class="page translation"
+                data-it="Tutte le Operazioni">All Operations</li>
         </ul>
 
-        <h2 id="1-title" class="title">Zero Range</h2>
+
+        <h2 id="1-title" class="title translation"
+            data-it="Intervallo Numerico">Zero Range</h2>
 
         <ul id="range-zeros">
             <li id="1-10" class="page">1 → 10</li>
@@ -47,10 +73,13 @@
             <li id="1-1000" class="page">1 → 1000</li>
         </ul>
     </aside>
+
     <main>
         <div id="game">
 
-            <button id="refresh-button">Refresh</button>
+            <button id="refresh-button" class="translation"
+                data-it="Ricarica">Refresh</button>
+
             <div id="container-expression">
                 <div id="num1">?</div>
                 <div id="operation">?</div>
@@ -60,10 +89,14 @@
                     <input id="user-input-result" type="text">
                 </div>
             </div>
-            <button id="confirm-button">Confirm</button>
+
+            <button id="confirm-button" class="translation"
+                data-it="Conferma">Confirm</button>
         </div>
+
         <div id="correct-or-incorrect"></div>
     </main>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -5,6 +5,16 @@ const userInput = document.getElementById('user-input-result');
 const refreshButton = document.getElementById('refresh-button');
 const confirmButton = document.getElementById('confirm-button');
 
+const translationButton = document.getElementById("translation-button");
+
+let it = false
+
+translationButton.addEventListener("click", () => {
+    it = !it;
+    translationButton.classList.toggle("active");
+    updateLanguage();
+});
+
 const sign = ["+", "-", "*", "/", "^"];
 
 const compliments = [
@@ -22,6 +32,27 @@ const encouragements = [
     "Believe in yourself — you're on the right path.",
     "Stay focused, you're making real progress."
 ];
+
+let complimentsCurrent = compliments;
+let encouragementsCurrent = encouragements;
+
+
+const complimentsIT = [
+    "Stai facendo un lavoro fantastico!",
+    "Il tuo lavoro è davvero impressionante.",
+    "Hai un grande talento e si vede.",
+    "Rendi tutto facile — ben fatto.",
+    "Stai migliorando velocemente, continua così!"
+];
+
+const encouragementsIT = [
+    "Continua così, sei più forte di quanto pensi.",
+    "Non mollare, ogni giorno sei più vicino.",
+    "Hai tutto ciò che serve per riuscire.",
+    "Credi in te stesso — sei sulla strada giusta.",
+    "Rimani concentrato, stai facendo veri progressi."
+];
+
 
 const oneToTen = document.getElementById("1-10")
 const oneToOneHundred = document.getElementById("1-100")
@@ -195,7 +226,7 @@ confirmButton.addEventListener("click", () => {
             <br>
             <p>${expression}</p>
             <br>
-            <p>${compliments[Math.floor(Math.random() * compliments.length)]}</p>
+            <p>${complimentsCurrent[Math.floor(Math.random() * complimentsCurrent.length)]}</p>
         `;
     }
     else {
@@ -210,7 +241,7 @@ confirmButton.addEventListener("click", () => {
             <h2>INCORRECT</h2><br>
             <p>${expression}</p><br>
             ${remainderText}
-            <p>${encouragements[Math.floor(Math.random() * encouragements.length)]}</p><br>
+            <p>${encouragementsCurrent[Math.floor(Math.random() * encouragementsCurrent.length)]}</p><br>
         `;
     }
 
@@ -252,3 +283,24 @@ menuButton.addEventListener("click", () => {
         threeLines.classList.remove("hidden")
     }
 });
+
+function updateLanguage() {
+    const elements = document.querySelectorAll(".translation");
+
+    if (it) {
+        elements.forEach(el => {
+            el.dataset.en = el.textContent;
+            el.textContent = el.dataset.it;
+        });
+
+        complimentsCurrent = complimentsIT;
+        encouragementsCurrent = encouragementsIT;
+    } else {
+        elements.forEach(el => {
+            el.textContent = el.dataset.en;
+        });
+
+        complimentsCurrent = compliments;
+        encouragementsCurrent = encouragements;
+    }
+}
