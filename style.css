@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'math';
+    src: url('font/math.otf');
+}
+
 body {
     width: 100vw;
     height: 100dvh;
@@ -8,6 +13,76 @@ body {
     background: linear-gradient(to bottom right, rgb(65, 65, 255), rgb(73, 158, 255));
     background-repeat: no-repeat;
     overflow: hidden;
+    font-family: 'math';
+}
+
+header {
+    position: absolute;
+}
+
+#mode {
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+    width: 100vw;
+}
+
+#menu-button {
+    position: absolute;
+    padding: 20px;
+    z-index: 105;
+}
+
+#menu-aside {
+    height: max-content;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(to left bottom, rgb(0, 217, 255), rgb(0, 153, 255));
+    border-radius: 0 20px 20px 0;
+    padding: 50px 40px 20px 20px;
+    border: solid 4px rgb(72, 224, 255);
+    z-index: 101;
+    transition: left ease 0.6s;
+}
+
+#modeUl, #range-zeros{
+    list-style: none;
+}
+
+ul li{
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: -10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform ease 0.4s, filter ease 0.4s;
+}
+
+li.selected{
+    filter: brightness(1.2);    
+}
+
+li:hover{
+    transform: scale(1.10);
+}
+
+ul#modeUl li{
+    background: linear-gradient(to bottom left, rgb(49, 125, 255), rgb(0, 226, 251));
+    border-radius: 20px;
+    border: solid 2px rgb(49, 193, 255);
+}
+
+#range-zeros li{
+    background: linear-gradient(to bottom left, rgb(51, 55, 191), rgb(123, 255, 240));
+    border-radius: 20px;
+    border: solid 2px rgb(77, 100, 255);
+}
+
+.icon {
+    position: absolute;
+    opacity: 1;
+    transition: opacity ease 0.4s;
 }
 
 #game {
@@ -85,6 +160,7 @@ button {
     aspect-ratio: 12/4;
     font-size: 1.5rem;
     cursor: pointer;
+    font-family: 'math';
     filter: brightness(0.9);
     transition: transform ease 0.4s, filter ease 0.4s;
 }
@@ -118,4 +194,8 @@ button#refresh-button {
 #user-input-result:hover, #user-input-result:focus {
     border: solid 2px rgb(18, 186, 241);
     outline: none;
+}
+
+.hidden {
+    opacity: 0 !important;
 }

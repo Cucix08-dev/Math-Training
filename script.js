@@ -5,7 +5,7 @@ const userInput = document.getElementById('user-input-result');
 const refreshButton = document.getElementById('refresh-button');
 const confirmButton = document.getElementById('confirm-button');
 
-const sign = ["+", "-", "*", "/"];
+const sign = ["+", "-", "*", "/", "^"];
 
 const compliments = [
     "You're doing an amazing job!",
@@ -23,15 +23,103 @@ const encouragements = [
     "Stay focused, you're making real progress."
 ];
 
+const oneToTen = document.getElementById("1-10")
+const oneToOneHundred = document.getElementById("1-100")
+const oneToOneThousand = document.getElementById("1-1000")
+
+let n = 100;
+
+let selectedZero = "1-100"
+
+oneToTen.addEventListener("click", () => {
+    n = 10;
+    document.getElementById(`${selectedZero}`).classList.remove("selected");
+    selectedZero = "1-10"
+    oneToTen.classList.add("selected");
+});
+
+oneToOneHundred.addEventListener("click", () => {
+    n = 100;
+    document.getElementById(`${selectedZero}`).classList.remove("selected");
+    selectedZero = "1-100"
+    oneToOneHundred.classList.add("selected");
+});
+
+oneToOneThousand.addEventListener("click", () => {
+    n = 1000;
+    document.getElementById(`${selectedZero}`).classList.remove("selected");
+    selectedZero = "1-1000"
+    oneToOneThousand.classList.add("selected");
+});
+
+const normalTrainingButton = document.getElementById("normal-training");
+const grade1Button = document.getElementById("grade-1");
+const grade2Button = document.getElementById("grade-2");
+const grade3Button = document.getElementById("grade-3");
+const grade4Button = document.getElementById("grade-4");
+const middleSchoolButton = document.getElementById("middle-school");
+const title = document.getElementById("mode");
+
+let o = 4;
+
+let selectedOneMode = "normal-training"
+
+normalTrainingButton.addEventListener("click", () => {
+    o = 4;
+    title.textContent = "Normal Training";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "normal-training"
+    normalTrainingButton.classList.add("selected");
+});
+
+grade1Button.addEventListener("click", () => {
+    o = 1;
+    title.textContent = "Level 1";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "grade-1"
+    grade1Button.classList.add("selected");
+});
+
+grade2Button.addEventListener("click", () => {
+    o = 2;
+    title.textContent = "Level 2";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "grade-2"
+    grade2Button.classList.add("selected");
+});
+
+grade3Button.addEventListener("click", () => {
+    o = 3;
+    title.textContent = "Level 3";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "grade-3"
+    grade3Button.classList.add("selected");
+});
+
+grade4Button.addEventListener("click", () => {
+    o = 4;
+    title.textContent = "Level 4";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "grade-4"
+    grade4Button.classList.add("selected");
+});
+
+middleSchoolButton.addEventListener("click", () => {
+    o = 5;
+    title.textContent = "Level MAX";
+    document.getElementById(`${selectedOneMode}`).classList.remove("selected")
+    selectedOneMode = "middle-school"
+    middleSchoolButton.classList.add("selected");
+});
 
 function generateExpression() {
-    let a = Math.floor(Math.random() * 100) + 1;
-    let b = Math.floor(Math.random() * 100) + 1;
+    let a = Math.floor(Math.random() * n) + 1;
+    let b = Math.floor(Math.random() * n) + 1;
 
     const big = Math.max(a, b);
     const small = Math.min(a, b);
 
-    operation.textContent = sign[Math.floor(Math.random() * 4)];
+    operation.textContent = sign[Math.floor(Math.random() * o)];
 
     num1.textContent = big;
     num2.textContent = small;
@@ -47,8 +135,8 @@ function generateExpression() {
             return big * small;
 
         case "/":
-            const divisor = Math.floor(Math.random() * 10) + 1; // 1–10
-            const base = Math.floor(Math.random() * 10) + 1;    // 1–10
+            const divisor = Math.floor(Math.random() * (n / 10)) + 1;
+            const base = Math.floor(Math.random() * 10) + 1;
 
             const newSmall = divisor;
             const newBig = divisor * base;
@@ -57,6 +145,15 @@ function generateExpression() {
             num2.textContent = newSmall;
 
             return newBig / newSmall;
+
+        case "^":
+            const newBigPot = Math.floor(Math.random() * 20 + 1);
+            const newSmallPot = Math.floor(Math.random() * 5 + 1);
+
+            num1.textContent = newBigPot;
+            num2.textContent = newSmallPot;
+
+            return Math.pow(newBig,newSmall);
 
         default:
             return -1;
@@ -74,6 +171,10 @@ const colorIncorrect = "#ff9595";
 
 const backgroundcolorCorrect = "#45ff6a50";
 const colorCorrect = "#1cff27";
+
+
+
+
 
 
 confirmButton.addEventListener("click", () => {
@@ -126,3 +227,28 @@ refreshButton.addEventListener("click", () => {
     result = generateExpression();
 });
 
+
+
+
+const menuButton = document.getElementById("menu-button");
+const menuAside = document.getElementById("menu-aside");
+
+const threeLines = document.getElementById("three-lines");
+const leftArrow = document.getElementById("left-arrow");
+
+let signActive = false;
+
+menuButton.addEventListener("click", () => {
+    signActive = !signActive;
+
+    if (signActive) {
+        menuAside.style.left = `0%`;
+        threeLines.classList.add("hidden")
+        leftArrow.classList.remove("hidden")
+    }
+    else {
+        menuAside.style.left = `-100%`;
+        leftArrow.classList.add("hidden")
+        threeLines.classList.remove("hidden")
+    }
+});
