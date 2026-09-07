@@ -7,20 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game">
-        <button id="refresh-button">Refresh</button>
-        <div id="container-expression">
-            <div id="num1">?</div>
-            <div id="operation">?</div>
-            <div id="num2">?</div>
-            <div>=</div>
-            <div id="risult-container">
-                <input id="user-input-result" type="text">
-            </div>
+    <aside id="menu-aside">
+        <h2 id="menu-title" class="title">Training Modes</h2>
+
+        <ul>
+            <li id="normal-training" class="page selected">Normal Training</li>
+            <li id="grade-1" class="page">1st Grade (+)</li>
+            <li id="grade-2" class="page">2nd Grade (+ -)</li>
+            <li id="grade-3" class="page">3rd Grade (+ - *)</li>
+            <li id="grade-4" class="page">4th Grade (+ - * /)</li>
+            <li id="grade-5" class="page">5th Grade (+ - * /)</li>
+            <li id="middle-school" class="page">Middle School (+ - * / ^)</li>
+            <li id="high-school" class="page">High School (+ - * / ^ √)</li>
+        </ul>
+
+        <h2 id="zero-title" class="title">Zero Range</h2>
+
+        <ul id="zero-range">
+            <li id="zero-10" class="page">1 → 10</li>
+            <li id="zero-100" class="page">1 → 100</li>
+            <li id="zero-1000" class="page">1 → 1000</li>
+        </ul>
+    </aside>
+
+
+
+
+    <main>
+        <div id="menu-button">
+
         </div>
-        <button id="confirm-button">Confirm</button>
-    </div>
-    <div id="correct-or-incorrect"></div>
+        <div id="game">
+            <button id="refresh-button">Refresh</button>
+            <div id="container-expression">
+                <div id="num1">?</div>
+                <div id="operation">?</div>
+                <div id="num2">?</div>
+                <div>=</div>
+                <div id="risult-container">
+                    <input id="user-input-result" type="text">
+                </div>
+            </div>
+            <button id="confirm-button">Confirm</button>
+        </div>
+        <div id="correct-or-incorrect"></div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>
