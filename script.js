@@ -278,7 +278,7 @@ menuButton.addEventListener("click", () => {
         leftArrow.classList.remove("hidden")
     }
     else {
-        menuAside.style.left = `-100%`;
+        menuAside.style.left = `-200%`;
         leftArrow.classList.add("hidden")
         threeLines.classList.remove("hidden")
     }

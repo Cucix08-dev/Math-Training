@@ -38,7 +38,7 @@ header {
     height: max-content;
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -200%;
     background: linear-gradient(to left bottom, rgb(0, 217, 255), rgb(0, 153, 255));
     border-radius: 0 20px 20px 0;
     padding: 50px 40px 20px 20px;
