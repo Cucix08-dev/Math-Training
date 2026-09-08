@@ -54,9 +54,11 @@ const encouragementsIT = [
 ];
 
 
-const oneToTen = document.getElementById("1-10")
-const oneToOneHundred = document.getElementById("1-100")
-const oneToOneThousand = document.getElementById("1-1000")
+const oneToTen = document.getElementById("1-10");
+const oneToOneHundred = document.getElementById("1-100");
+const oneToOneThousand = document.getElementById("1-1000");
+
+const zeroSelectedText = document.getElementById("zero-selected");
 
 let n = 100;
 
@@ -66,6 +68,7 @@ oneToTen.addEventListener("click", () => {
     n = 10;
     document.getElementById(`${selectedZero}`).classList.remove("selected");
     selectedZero = "1-10"
+    zeroSelectedText.textContent = "1 → 10"
     oneToTen.classList.add("selected");
 });
 
@@ -73,6 +76,7 @@ oneToOneHundred.addEventListener("click", () => {
     n = 100;
     document.getElementById(`${selectedZero}`).classList.remove("selected");
     selectedZero = "1-100"
+    zeroSelectedText.textContent = "1 → 100"
     oneToOneHundred.classList.add("selected");
 });
 
@@ -80,6 +84,7 @@ oneToOneThousand.addEventListener("click", () => {
     n = 1000;
     document.getElementById(`${selectedZero}`).classList.remove("selected");
     selectedZero = "1-1000"
+    zeroSelectedText.textContent = "1 → 1000"
     oneToOneThousand.classList.add("selected");
 });
 
@@ -97,7 +102,7 @@ let selectedOneMode = "normal-training"
 
 normalTrainingButton.addEventListener("click", () => {
     o = 4;
-    title.textContent = "Normal Training";
+    title.textContent = it? "Allenamento Normale":"Normal Training";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "normal-training"
     normalTrainingButton.classList.add("selected");
@@ -105,7 +110,7 @@ normalTrainingButton.addEventListener("click", () => {
 
 grade1Button.addEventListener("click", () => {
     o = 1;
-    title.textContent = "Level 1";
+    title.textContent = "+";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "grade-1"
     grade1Button.classList.add("selected");
@@ -113,7 +118,7 @@ grade1Button.addEventListener("click", () => {
 
 grade2Button.addEventListener("click", () => {
     o = 2;
-    title.textContent = "Level 2";
+    title.textContent = "+ -";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "grade-2"
     grade2Button.classList.add("selected");
@@ -121,7 +126,7 @@ grade2Button.addEventListener("click", () => {
 
 grade3Button.addEventListener("click", () => {
     o = 3;
-    title.textContent = "Level 3";
+    title.textContent = "+ - *";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "grade-3"
     grade3Button.classList.add("selected");
@@ -129,7 +134,7 @@ grade3Button.addEventListener("click", () => {
 
 grade4Button.addEventListener("click", () => {
     o = 4;
-    title.textContent = "Level 4";
+    title.textContent =  "+ - * /";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "grade-4"
     grade4Button.classList.add("selected");
@@ -137,7 +142,7 @@ grade4Button.addEventListener("click", () => {
 
 middleSchoolButton.addEventListener("click", () => {
     o = 5;
-    title.textContent = "Level MAX";
+    title.textContent = "+ - * / ^";
     document.getElementById(`${selectedOneMode}`).classList.remove("selected")
     selectedOneMode = "middle-school"
     middleSchoolButton.classList.add("selected");

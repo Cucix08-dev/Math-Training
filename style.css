@@ -27,6 +27,11 @@ header {
     width: 100vw;
 }
 
+#zero-selected {
+    color: white;
+    text-align: center;
+}
+
 #menu-button {
     position: absolute;
     padding: 20px;
@@ -35,10 +40,9 @@ header {
 }
 
 #menu-aside {
-    height: max-content;
     position: absolute;
     top: 0;
-    overflow-y: scroll;
+    overflow-y: scroll !important;
     left: -200%;
     background: linear-gradient(to left bottom, rgb(0, 217, 255), rgb(0, 153, 255));
     border-radius: 0 20px 20px 0;
@@ -151,6 +155,7 @@ ul#modeUl li{
     background-color: white;
     width: 70%;
     height: 10vh;
+    max-width: 800px;
     align-items: center;
 }
 
@@ -222,4 +227,21 @@ button#refresh-button {
 
 .hidden {
     opacity: 0 !important;
+}
+
+.invisible-scrollbar {
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-height:942px) {
+    #menu-aside {
+        height: 90vh;
+    }
 }
